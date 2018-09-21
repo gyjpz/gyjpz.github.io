@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				overflow:hidden;
+			}
+			img{
+				border: 1px solid lightslategray;
+				margin: 10px;
+			}
+			#smallshirt{
+				width: 800px;
+				height: 200px;
+				margin: auto;
+				position: relative;
+			}
+			#bigshirt{
+				position: relative;
+			}
+			#bigshirt img{
+				display: none;
+				position: relative;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="smallshirt">
+			<img src="img/shirt_1.jpg"/>
+			<img src="img/shirt_2.jpg"/>
+			<img src="img/shirt_3.jpg"/>
+			<img src="img/shirt_4.jpg"/>
+		</div>
+		<div id="bigshirt">
+			<img src="img/shirt_1_big.jpg" id="img1"/>
+			<img src="img/shirt_2_big.jpg" id="img2"/>
+			<img src="img/shirt_3_big.jpg" id="img3"/>
+			<img src="img/shirt_4_big.jpg" id="img4"/>
+		</div>
+		<script>
+			var imgs = document.querySelectorAll('img')
+			for (let i = 0;i < imgs.length;i++){
+				imgs[i].onmouseover = function(){
+					imgs[i].style.borderColor = 'red'
+					imgs[i+4].style.display = 'block'
+				}
+				imgs[i].onmouseout = function(){
+					imgs[i].style.borderColor = 'lightslategray'
+					imgs[i+4].style.display = 'none'
+				}
+				imgs[i].onmousemove = function(event){
+					var leftX = event.clientX
+					var topY = event.clientY - imgs[i].offsetHeight - 20
+					imgs[i+4].style.left = leftX + 'px'
+					imgs[i+4].style.top = topY + 'px'
+				}
+			}
+		</script>
+	</body>
+</html>

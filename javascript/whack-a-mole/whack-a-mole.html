@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				height: 500px;
+				width: 800px;
+				border: 1px solid black;
+				position: relative;
+				margin: auto;
+			}
+			#bb{
+				height: 50px;
+				width: 210px;
+				margin: auto;
+				margin-top: 20px;
+			}
+			button{
+				width: 100px;
+				height: 30px;
+				border: none;
+				background-color: black;
+				background: linear-gradient(to bottom,black,white);
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<div id="bb">
+			<button id="start">开始</button>
+			<button id='pause'>暂停</button>
+		</div>
+		<script>
+			var bstart = document.querySelector('#start')
+			var bpause = document.querySelector('#pause')
+			var interVal
+			var flag = false
+			function createMouse(){
+				//创建img节点
+				var mouseImg = document.createElement("img")
+				//老鼠图片
+				mouseImg.setAttribute("src","img/mouse2.png")
+				//设置老鼠大小
+				mouseImg.style.width = 100 + 'px'
+				mouseImg.style.height = 100 + 'px'
+				mouseImg.style.position = 'absolute'
+				mouseImg.onclick = function(){
+					this.parentElement.removeChild(this)
+				}
+				return mouseImg
+			}
+			function newmouse(){
+				interVal = window.setInterval(function(){
+					var mouse = createMouse()
+					var left = parseInt(Math.random()*700)
+					var top = parseInt(Math.random()*400)
+					mouse.style.left = left + 'px'
+					mouse.style.top = top + 'px'
+					box.appendChild(mouse)
+					gameOver()
+				},500)
+			}
+			bstart.onclick = function(){
+				if (interVal) {
+					return
+				}
+				flag = false
+				if (this.innerText == '重新开始') {
+					box.removeChild(box.firstChild)
+					this.innerText = '开始'
+					newmouse()
+				}
+				else{
+					newmouse()
+				}
+			}
+			bpause.onclick = function(){
+				if(flag){
+					return
+				}
+				if(this.innerText == '暂停'){
+					this.innerText = '继续'
+					window.clearInterval(interVal)
+				}
+				else if(this.innerText == '继续'){
+					this.innerText = '暂停'
+					newmouse()
+				}
+			}
+			//判断老鼠数量决定是否结束游戏
+			function gameOver(){
+				var mouseCount = box.childElementCount
+				if (mouseCount >= 10) {
+					//结束定时器
+					window.clearInterval(interVal)
+					
+					interVal = 0
+					//清空所有老鼠
+					for (var i = 0;i < mouseCount;i++) {
+						box.removeChild(box.children[0])
+					}
+					over()
+				}
+			}
+			function over(){
+				var overImg = document.createElement('img')
+				overImg.setAttribute('src','img/end.png')
+				overImg.style.width = 800 + 'px'
+				overImg.style.height = 300 + 'px'
+				box.appendChild(overImg)
+				//游戏结束后按钮变为重新开始
+				bstart.innerText = '重新开始'
+				flag = true
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- <link rel="stylesheet" href="less/animation3d.css"> -->
+</head>
+<body>
+	<div class="box">
+		<div class="boxtran">
+			<div class="tran1"></div>
+			<div class="tran2"></div>
+			<div class="tran3"></div>
+			<div class="tran4"></div>
+			<div class="tran5"></div>
+			<div class="tran6"></div>
+		</div>
+	</div>
+	
+	<!-- http://www.17sucai.com/preview/119710/2015-04-17/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B91/index.html -->
+	<style type="text/css">
+		.box{
+			perspective: 400px;
+		}
+		.boxtran{
+			width: 100px;
+			height: 100px;
+			position: relative;
+			margin: 200px auto;
+			transform-style: preserve-3d;
+			animation: mytotate 4s infinite;
+		}
+		@keyframes mytotate{
+			0%{transform:rotateX(0deg) rotateY(0deg)}
+			50%{transform:rotateX(360deg) rotateY(0deg)}
+			100%{transform:rotateX(360deg) rotateY(360deg);}
+		}
+		[class^=tran]{
+			width: 100px;
+			height: 100px;
+            border-radius: 10px;
+			position: absolute;
+		}
+		.tran1{
+			background-color: lightblue;
+			transform: translateX(100px) rotateY(90deg);
+		}
+		.tran2{
+			background-color: lightgreen;
+			transform: translateX(-100px) rotateY(90deg);
+		}
+		.tran3{
+			background-color: lightpink;
+			transform: translateY(-100px) rotateX(90deg);
+		}
+		.tran4{
+			background-color: lightyellow;
+			transform: translateY(100px) rotateX(90deg);
+		}
+		.tran5{
+			background-color: lightsalmon;
+			transform: translateZ(-100px);
+		}
+		.tran6{
+			background-color: lightslategrey;
+			transform: translateZ(100px);
+		} 
+	</style>
+</body>
+</html>

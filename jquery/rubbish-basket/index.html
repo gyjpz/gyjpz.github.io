@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>垃圾桶</title>
+	<link rel="stylesheet" href="style/index.css"/>
+	<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+</head>
+<body>
+	<div class="rubish"><img src="img/ru.png" id="ru"></div>
+	<script type="text/javascript">
+		$(function(){
+			var imgArr=['icon1.png','icon2.png','icon3.png','icon4.png','icon5.png','icon6.png','icon7.png'];
+			var isMousedown=false;
+			var imgNow = null;
+			var pos = {x:0,y:0}
+			$(imgArr).each(function(i,e){
+				var img = $('<img>').attr('src','img/'+e).css({
+					left: Math.round(Math.random()*80)+'%',
+					top:Math.round(Math.random()*80)+'%'
+				})
+				$('body').append(img)
+			})
+			$('img').mousedown(function(e){
+				pos.x=e.pageX-$(this).offset().left;
+				pos.y=e.pageY-$(this).offset().top;
+				isMousedown = true;
+				imgNow = this;
+				return false;
+			})
+			$(document).mousemove(function(e){
+				if (!isMousedown) return ;
+				var x=e.pageX-pos.x;
+				var y=e.pageY-pos.y;
+				$(imgNow).css({
+					left:x,
+					top:y
+				});
+				}).mouseup(function(){
+				isMousedown = false;
+				var rubishPos=$('#ru').offset();
+				var imgPos=$(imgNow).offset();
+				if(rubishPos.left<=imgPos.left&&rubishPos.top<=imgPos.top){
+					$(imgNow).remove();
+				}
+			})
+		})
+	</script>
+</body>
+</html>

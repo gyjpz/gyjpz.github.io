@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+</head>
+<body>
+	<button>
+		<span>button<span><i></i>
+		</button>
+	<style type="text/css">
+		button{
+			width: 200px;
+			height: 60px;
+			border-radius: 5px;
+			display: block;
+			background: lightblue;
+			margin: 100px auto;
+			border: transparent;
+			position: relative;
+			z-index: 1;
+			overflow: hidden;
+		}
+		span{
+			display: block;
+            text-align: center;
+            line-height: 60px;
+			color: white;
+		}
+		i{
+			content: '';
+			display: block;
+			width: 420px;
+			height: 420px;
+			background: lightgreen;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			border-radius: 50%;
+			z-index: -1;
+			transition: all 0.4s;
+			transform: scale(0);
+		}
+		i.change{
+			transform: scale(1);
+		}
+	</style>
+	<script type="text/javascript">
+		var x = 0,y = 0;
+		$('button').mousemove(function(event) {
+			$('i').css({
+				left:(event.pageX - $('span').offset().left-$('i').width()/2)+'px',
+				top:(event.pageY - $('span').offset().top-$('i').height()/2)+'px'
+			})
+			$('i').addClass('change');
+		}).mouseout(function() {
+			$('i').removeClass('change');
+		});
+	</script>
+</body>
+</html>

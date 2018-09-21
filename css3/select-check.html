@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<label class="box">
+		<input type="radio" name="work">
+		<div class="slider">H5工程师</div>
+	</label>
+	<label class="box">
+		<input type="radio" name="work">
+		<div class="slider">UI设计师</div>
+	</label>
+	<hr>
+	<label class="box">
+		<input type="checkbox" name="work">
+		<div class="slider">HTML5</div>
+	</label>
+	<label class="box">
+		<input type="checkbox" name="work">
+		<div class="slider">JavaScript</div>
+	</label>
+	<label class="box">
+		<input type="checkbox" name="work">
+		<div class="slider">JQuery</div>
+	</label>
+	<style type="text/css">
+		.box{
+			display: inline-block;
+			margin: 10px;
+		}
+		input{
+			display: none;
+		}
+		.slider{
+			border-radius: 5px;
+			background-color: #eee;
+			font-size: 13px;
+			line-height: 36px;
+			padding: 0 20px 0 10px;
+			transition: all .5s;
+		}
+		.slider::before{
+			content: '';
+			width: 16px;
+			height: 16px;
+			background: url(img/input-unchecked.png);
+			display: inline-block;
+			vertical-align: middle;
+			margin-top: -3px;
+			margin-right: 5px;
+			transition: all .5s;
+		}
+		.box input:checked + .slider{
+			background: #2196F3;
+			color: white;
+		}
+		.box input:checked + .slider::before{
+			background: url(img/input-checked.png);
+		}
+	</style>
+</body>
+</html>

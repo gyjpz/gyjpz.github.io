@@ -1,0 +1,25 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+	background:url(../img/window.jpg) no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	overflow:hidden;
+	/* height: 1000px; */
+}
+.rubish{
+	position: absolute;
+	right:0px;
+	bottom: 0px;
+	width: 100px;
+	height: 100px;
+}
+#ru{
+	width: 100px;
+	height: 100px;
+}
+img{
+	position: absolute;
+}

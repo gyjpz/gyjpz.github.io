@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: darkslategray;
+    }
+    .stage {
+        width: 400px;
+        height: 300px;
+        position: relative;
+        margin: 150px auto;
+    }
+    #box{
+        width: 400px;
+        height: 300px;
+        position: relative;
+        float: left;
+    }
+    #box>img{
+        width: 400px;
+        height: 300px;
+    }
+    .desplay {
+        width: 800px;
+        height: 600px;
+        position: absolute;
+        top: -150px;
+        left: -200px;
+        transition: all .2s;
+    }
+    .stage .touch {
+        width: 400px;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+    .desplay>div{
+        width: 266px;
+        height: 200px;
+        float: left;
+        opacity: 0;
+        transform: scale(0.5);
+        background: url(./a4.png) no-repeat;
+    }
+    .desplay .left-top {
+        transition: all .5s ease .4s;
+    }
+    .desplay .top {
+        background-position-x: -266px;
+        transition: all .5s ease .2s;
+    }
+    .desplay .right-top {
+        background-position-x: -532px;
+        transition: all .5s ease .4s;
+    }
+    .desplay .left{
+        background-position-y: -200px;
+        transition: all .5s ease .2s;
+    }
+    .desplay .center{
+        background-position-x: -266px;
+        background-position-y: -200px;
+        transition: all .5s ease;
+    }
+    .desplay .right{
+        background-position-x: -532px;
+        background-position-y: -200px;
+        transition: all .5s ease .2s;
+    }
+    .desplay .left-bottom {
+        background-position-y: -400px;
+        transition: all .5s ease .4s;
+    }
+    .desplay .bottom{
+        background-position-x: -266px;
+        background-position-y: -400px;
+        transition: all .5s ease .2s;
+    }
+    .desplay .right-bottom {
+        background-position-x: -532px;
+        background-position-y: -400px;
+        transition: all .5s ease .4s;
+    }
+    .desplay .active{
+        transform:scale(1);
+        opacity:1;
+    }
+    </style>
+    <div class="stage">
+            <div id="box">
+                <img src="./a4.png">
+                <div class="desplay">
+                    <div class="left-top"></div>
+                    <div class="top"></div>
+                    <div class="right-top"></div>
+                    <div class="left"></div>
+                    <div class="center"></div>
+                    <div class="right"></div>
+                    <div class="left-bottom"></div>
+                    <div class="bottom"></div>
+                    <div class="right-bottom"></div>
+                </div>
+                <div class="touch"></div>
+            </div>
+        </div>
+    <script>
+    $(".stage .touch").hover(function(){
+        $(this).siblings('.desplay').find('div').addClass('active');
+    },function(){
+        $(this).siblings('.desplay').find('div').removeClass('active');
+    });
+    </script> 
+</body>
+</html>

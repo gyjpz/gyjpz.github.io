@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#div1{
+				width: 1350;
+				height: 600px;
+				border: 1px solid black;
+			}
+			button{
+				background-color: #000000;
+				color: #EEEEEE;
+				display: block;
+				width: 100px;
+				height: 30px;
+				margin: auto;
+			}
+			#box{
+				background-color: #000000;
+				border-radius: 50%;
+				width: 50px;
+				height: 50px;
+				position: relative;
+			}
+			p{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<p>单机取消小球跟随</p>
+			<div id="box"></div>
+		</div>
+		<button id="btn">原路返回</button>
+		<script>
+			var circle = document.getElementById('box')
+			var leftX = []
+			var topY = []
+				div1.onmousemove = function(event){
+					var circleLeft = event.clientX - circle.offsetWidth/2 + 'px'
+					var circleTop = event.clientY - circle.offsetHeight/2 + 'px'
+					circle.style.left = circleLeft
+					circle.style.top = circleTop
+					leftX.push(circleLeft)
+					topY.push(circleTop)
+				}
+				div1.onmousedown = function(){
+					div1.onmousemove = null
+				}
+			btn.onclick = function(){
+				console.log(leftX)
+				console.log(topY)
+				setInterval(function(){
+					circle.style.left = leftX.pop()
+					circle.style.top = topY.pop()
+				},50)
+			}
+		</script>
+	</body>
+</html>

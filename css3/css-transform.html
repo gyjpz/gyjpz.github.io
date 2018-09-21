@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+			padding: 50px;
+			background-clip: content-box;
+			background-color: #CCC;
+			margin: 10px;
+			float: left;
+		}
+		.transform{
+			width: 100px;
+			height: 100px;
+			background-color: lightblue;
+			float: left;
+			transition: all 0.5s;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"><div class="transform rotate"></div></div>
+	<div class="box"><div class="transform rotateX"></div></div>
+	<div class="box"><div class="transform rotateY"></div></div>
+	<div class="box"><div class="transform rotateZ"></div></div>
+	<div class="box"><div class="transform scale"></div></div>
+	<div class="box"><div class="transform scaleX"></div></div>
+	<div class="box"><div class="transform scaleY"></div></div>
+	<div class="box"><div class="transform skew"></div></div>
+	<div class="box"><div class="transform skewX"></div></div>
+	<div class="box"><div class="transform skewY"></div></div>
+	<div class="box"><div class="transform skewXY"></div></div>
+	<div class="box"><div class="transform translate"></div></div>
+	<div class="box"><div class="transform translateX"></div></div>
+	<div class="box"><div class="transform translateY"></div></div>
+	<div class="box perspective-100"><div class="transform rotateX"></div></div>
+	<div class="box perspective-100"><div class="transform rotateY"></div></div>
+	<div class="box perspective-300"><div class="transform rotateX"></div></div>
+	<div class="box perspective-300"><div class="transform rotateY"></div></div>
+	<div class="box"><div class="transform rotate transform-origin-top-left"></div></div>
+	<div class="box"><div class="transform rotate transform-origin-top-right"></div></div>
+	<div class="box"><div class="transform rotate transform-origin-bottom-left"></div></div>
+	<div class="box"><div class="transform rotate transform-origin-bottom-right"></div></div>
+	<div class="box perspective-300"><div class="transform rotateX transform-origin-top-left"></div></div>
+	<div class="box perspective-300"><div class="transform rotateX transform-origin-bottom-right"></div></div>
+	<div class="box perspective-300"><div class="transform rotateY transform-origin-top-left"></div></div>
+	<div class="box perspective-300"><div class="transform rotateY transform-origin-bottom-right"></div></div>
+	<div class="box perspective-300"><div class="transform skewX transform-origin-top-left"></div></div>
+	<div class="box perspective-300"><div class="transform skewX transform-origin-bottom-right"></div></div>
+	<div class="box perspective-300"><div class="transform skewY transform-origin-top-left"></div></div>
+	<div class="box perspective-300"><div class="transform skewY transform-origin-bottom-right"></div></div>
+	<div class="box"><div class="transform scale transform-origin-top-left"></div></div>
+	<div class="box"><div class="transform scale transform-origin-top-right"></div></div>
+	<div class="box"><div class="transform scale transform-origin-bottom-left"></div></div>
+	<div class="box"><div class="transform scale transform-origin-bottom-right"></div></div>
+	<div class="box"><div class="transform scaleX transform-origin-top-left"></div></div>
+	<div class="box"><div class="transform scaleX transform-origin-bottom-right"></div></div>
+	<div class="box"><div class="transform scaleY transform-origin-top-left"></div></div>
+	<div class="box"><div class="transform scaleY transform-origin-bottom-right"></div></div>
+
+	<style type="text/css">
+		.rotate:hover{
+			transform: rotate(45deg);
+		}
+		.rotateX:hover{
+			transform: rotateX(45deg);
+		}
+		.rotateY:hover{
+			transform: rotateY(45deg);
+		}
+		.rotateZ:hover{
+			transform: rotateZ(45deg);
+		}
+		.scale:hover{
+			transform: scale(2);
+			/* transform: scale(1.5,2); */
+		}
+		.scaleX:hover{
+			transform: scaleX(2);
+		}
+		.scaleY:hover{
+			transform: scaleY(2);
+		}
+		.skew:hover{
+			transform: skew(45deg,45deg);
+		}
+		.skewX:hover{
+			transform: skewX(45deg);
+		}
+		.skewY:hover{
+			transform: skewY(-45deg);
+		}
+		.skewXY:hover{
+			transform: skewX(45deg) skewY(45deg);
+		}
+		.translate:hover{
+			transform: translate(45px,20px);
+		}
+		.translateX:hover{
+			transform: translateX(45px);
+		}
+		.translateY:hover{
+			transform: translateY(45px);
+		}
+		.perspective-100{
+			perspective: 100px;
+		}
+		.perspective-300{
+			perspective: 300px;
+		}
+		.transform-origin-top-left{
+			transform-origin: 0 0 0;
+		}
+		.transform-origin-top-right{
+			transform-origin: 100% 0 0;
+		}
+		.transform-origin-bottom-left{
+			transform-origin: 0 100% 0;
+		}
+		.transform-origin-bottom-right{
+			transform-origin: 100% 100% 0;
+		}
+	</style>
+</body>
+</html>

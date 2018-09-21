@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			width: 100px;
+			height: 50px;
+			float: left;
+			margin: 10px;
+		}
+		.translate{
+			width: 100px;
+			height: 50px;
+			background-color: lightblue;
+			transition: all 0.5s;
+			text-align: center;
+			line-height: 50px;
+			/* border-radius: 5px; */
+		}
+	</style>
+</head>
+<body>
+	<div class="box"><div class="translate scaleBig">循环放大</div></div>
+	<div class="box"><div class="translate scale">循环缩放</div></div>
+	<div class="box"><div class="translate scale1">放大一次</div></div>
+	<div class="box"><div class="translate scale2">放大停止</div></div>
+	<div class="box"><div class="translate translateY">向上浮动</div></div>
+	<div class="box"><div class="translate translateX">横向抖动</div></div>
+	<div class="box"><div class="translate translateXY">斜向抖动</div></div>
+	<div class="box"><div class="translate skewX">横向摆动</div></div>
+	<div class="box"><div class="translate skewX2">横向摆动</div></div>
+	<div class="box"><div class="translate rotate">重复摆动</div></div>
+	<div class="box perspective-200"><div class="translate rotateX">垂直摆动</div></div>
+	<style type="text/css">
+		.scaleBig:hover{
+			animation:mymove 0.5s linear infinite alternate;
+		}
+		@keyframes mymove {
+			100% {transform: scale(1.2);}
+		}
+		.scale:hover{
+			animation:mymove2 1.5s linear infinite alternate;
+		}
+		@keyframes mymove2 {
+			33%	{transform: scale(1.3);}
+			100%	{transform: scale(0.7);}
+			/* 100% {transform: scale(1);} */
+		}
+		.scale1:hover{
+			animation:mymove3 0.5s linear 2 alternate;
+		}
+		@keyframes mymove3 {
+			100%	{transform: scale(1.2);}
+		}
+		.scale2:hover{
+			animation:mymove4 1s linear forwards;
+			/* animation-fill-mode:forwards; */
+		}
+		@keyframes mymove4 {
+			40%	{transform: scale(1.2);}
+			60% {transform: scale(1.1);}
+			100% {transform: scale(1.3);}
+		}
+		.translateY:hover{
+			animation: mytran 0.9s linear infinite;
+		}
+		@keyframes mytran{
+			0% {transform: translateY(-4px);}
+			50% {transform: translateY(-8px);}
+			100% {transform: translateY(-4px);}
+		}
+		.translateX:hover{
+			animation: mytran2 1s linear;
+		}
+		@keyframes mytran2{
+			15% {transform: translateX(12px)}
+			30% {transform: translateX(-10px);}
+			45% {transform: translateX(8px);}
+			60% {transform: translateX(-6px);}
+			75% {transform: translateX(4px);}
+			90% {transform: translateX(-2px);}
+			100% {transform: translateX(0px);}
+		}
+		.translateXY:hover{
+			animation: mytran3 1s linear;
+		}
+		@keyframes mytran3{
+			15% {transform: translate(12px,12px)}
+			30% {transform: translate(-10px,-10px);}
+			45% {transform: translate(8px,8px);}
+			60% {transform: translate(-6px,-6px);}
+			75% {transform: translate(4px,4px);}
+			90% {transform: translate(-2px,-2px);}
+			100% {transform: translate(0px,0px);}
+		}
+		.skewX:hover{
+			animation: myskew 1s linear;
+		}
+		@keyframes myskew{
+			15% {transform: skewX(45deg)}
+			30% {transform: skewX(-36deg);}
+			45% {transform: skewX(27deg);}
+			60% {transform: skewX(-18deg);}
+			75% {transform: skewX(9deg);}
+			90% {transform: skewX(0);}
+		}
+		.skewX2:hover{
+			transform-origin: 0 0 0;
+			animation: myskew2 1s linear;
+		}
+		@keyframes myskew2{
+			15% {transform: skewX(45deg)}
+			30% {transform: skewX(-36deg);}
+			45% {transform: skewX(27deg);}
+			60% {transform: skewX(-18deg);}
+			75% {transform: skewX(9deg);}
+			90% {transform: skewX(0);}
+		}
+		.rotate:hover{
+			transform-origin: 50% 100% 0;
+			animation: myrotate 0.2s linear infinite;
+		}
+		@keyframes myrotate{
+			25% {transform: rotate(3deg)}
+			50% {transform: rotate(0deg);}
+			75% {transform: rotate(-3deg);}
+			100% {transform: rotate(0deg);}
+		}
+		.rotateX:hover{
+			transform-origin: 50% 50% 0;
+			animation: myrotate2 0.5s linear infinite;
+		}
+		.perspective-200{
+			perspective: 200px;
+		}
+		@keyframes myrotate2{
+			25% {transform: rotateX(30deg)}
+			50% {transform: rotateX(0deg);}
+			75% {transform: rotateX(-30deg);}
+			100% {transform: rotateX(0deg);}
+		}
+	</style>
+</body>
+</html>

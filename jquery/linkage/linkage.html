@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../jquery-3.3.1.js" type="text/javascript"></script>
+		<script src="省市.js"></script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<label>所在城市:</label>
+		<select></select>
+		<select></select>
+		<select></select>
+		<script>
+			var html1 = ''
+			var html2 = ''
+			var html3 = ''
+			$('select').css({width:150,height:30,lineHeight:"30px"})
+			//给予默认省份
+			for (i in citiesall) {
+				html1+='<option>'+citiesall[i].name+'</option>';
+			}
+			$('select:eq(0)').html(html1);
+			//给予默认城市
+			for (j in citiesall[0].city) {
+				html2 += '<option>' + citiesall[0].city[j].name + '</option>';
+			}
+			$('select:eq(1)').html(html2);
+			//给予默认区县
+			for (k in citiesall[0].city[0].area) {
+				html3 += '<option>' + citiesall[0].city[0].area[k] + '</option>';
+			}
+			$('select:eq(2)').html(html3);
+			//选择省份时找到对应市和区县
+			$('select:eq(0)').change(function(){
+				var province=$(this).val();
+				for (i in citiesall) {
+					if (province == citiesall[i].name) {
+						var html2 = ''
+						for (j in citiesall[i].city) {
+							html2 += '<option>' + citiesall[i].city[j].name + '</option>';
+						}
+						$('select:eq(1)').html(html2)
+						var html3 = ''
+						for (k in citiesall[i].city[0].area) {
+							html3 += '<option>' + citiesall[i].city[0].area[k] + '</option>';
+						}
+						$('select:eq(2)').html(html3)
+						
+					}
+				}
+			});
+			//选择城市是找到对应区县
+			$('select:eq(1)').change(function(){
+				var cities = $(this).val()
+				for (i in citiesall) {
+					for (j in citiesall[i].city) {
+						if (cities == citiesall[i].city[j].name) {
+							var html3 = ''
+							for (k in citiesall[i].city[j].area) {
+								html3 += '<option>' + citiesall[i].city[j].area[k] + '</option>'
+							}
+							$('select:eq(2)').html(html3)
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

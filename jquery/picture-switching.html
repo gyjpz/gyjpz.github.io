@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width:200px;
+			height:200px;
+			background:url(img/1.jpg);
+			background-size:200px 200px;
+			float:left;
+		}
+		ul{
+			list-style: none;
+			float:left;
+			width:70px;
+			padding-left:10px;
+		}
+		ul li{
+			width:64px;
+			height:64px;
+			margin-bottom:5px;
+			background-color: #ddd;
+		}
+		li img{
+			width:64px;
+			height:64px;
+		}
+	</style>
+</head>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<body>
+	<div></div>
+	<ul>
+		<li><img src="img/1.jpg"></li>
+		<li><img src="img/2.jpg"></li>
+		<li><img src="img/3.jpg"></li>
+	</ul>
+	<script type="text/javascript">
+		$(function(){
+			$('li').click(function() {
+				var a= $(this).index()+1
+				$('div').stop(true).fadeOut(0).fadeIn(1000).css({
+					backgroundImage: 'url(img/'+a+'.jpg)',
+					backgroundSize:'200px 200px'
+				});
+			});
+		})
+	</script>
+</body>
+</html>

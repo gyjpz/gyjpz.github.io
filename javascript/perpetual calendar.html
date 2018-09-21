@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#calender{
+				width: 700px;
+				margin:100px auto;
+			}
+			#year_month{
+				text-align: center;
+				height: 50px;
+				line-height: 50px;
+			}
+			#day td{
+				width: 100px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+			}
+			#date td{
+				width: 100px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				float: left;
+			}
+			#date td:hover{
+				background-color: #ddd;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="calender">
+			<div id="year_month">
+				<select id="year"></select>
+				<select id="month"></select>
+			</div>
+			<table>
+				<tr id="day">
+					<td>周日</td>
+					<td>周一</td>
+					<td>周二</td>
+					<td>周三</td>
+					<td>周四</td>
+					<td>周五</td>
+					<td>周六</td>
+				</tr>
+			</table>
+			<div id="date"></div>
+			
+		</div>
+		<script type="text/javascript">
+			var yearNum = document.getElementById('year')
+			var monthNum = document.getElementById('month')
+			var dateNum = document.getElementById('date')
+			//设定可选择的年份
+			for (var i = 1900;i <= 2100;i++) {
+				createOption(i,yearNum)
+			}
+			//设置可选择的月份
+			for (var i = 1;i <= 12;i++) {
+				createOption(i,monthNum)
+			}
+			//创建option节点
+			function createOption(num,year){
+				var opt = document.createElement('option')
+				opt.innerHTML = num
+				opt.value = num
+				year.appendChild(opt)
+			}
+			//设置当前年份和月份
+			yearNum.value = new Date().getFullYear()
+			monthNum.value = new Date().getMonth()+1
+			
+			yearNum.onchange = function(){
+				allDate(+yearNum.value,monthNum.value-1)
+			}
+			
+			monthNum.onchange = function(){
+				allDate(+yearNum.value,monthNum.value-1)
+			}
+			
+			allDate(+yearNum.value,monthNum.value-1)
+			function allDate(year,month){
+				dateNum.innerHTML = ''
+				var firstDay = new Date(year,month,1).getDay()
+				
+				for (var i = 0;i < firstDay;i++) {
+					createTd(dateNum,'')
+				}
+				
+				var nextDate = new Date(year,month+1,1)
+				nextDate.setDate(0)
+				var monthDate = nextDate.getDate()
+				for (var i = 1;i <= monthDate;i++) {
+					createTd(dateNum,i)
+				}
+			}
+			
+			function createTd(date,num){
+				var td = document.createElement('td')
+				td.innerHTML = num
+				date.appendChild(td)
+				
+				var today = new Date().getDate()
+				if(td.innerHTML == today){
+					td.style.backgroundColor = 'black';
+					td.style.color = 'white'
+				}
+			}
+		</script>
+	</body>
+</html>

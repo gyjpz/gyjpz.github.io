@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				float: left;
+				border: 1px solid black;
+				position: relative;
+			}
+			#smalldiv{
+				overflow: hidden;
+			}
+			#bigdiv{
+				width: 500px;
+				height: 500px;
+				overflow: hidden;
+			}
+			#smallimg{
+				width: 280px;
+				height: 280px;
+			}
+			#bigimg{
+				width: 2000px;
+				height: 2000px;
+				position: absolute;
+				display: none;
+				/*border: 1px solid black;*/
+			}
+			p{
+				width: 70px;
+				height: 70px;
+				background-color: rgba(0,255,255,0.2);
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="smalldiv">
+			<img src="img/small.jpg" id="smallimg"/>
+			<p id="smallp"></p>
+		</div>
+		<div id="bigdiv">
+			<img src="img/big.jpg" id="bigimg"/>
+		</div>
+		<script>
+			var box1 = document.getElementById('smalldiv')
+			var big = document.getElementById('bigimg')
+			var p = document.getElementById('smallp')
+			var maxLeft,maxTop,pLeft,pTop
+			function over(event){
+				big.style.display = 'block'
+				p.style.display = 'block'
+				//最大可移动的范围
+				maxLeft = box1.offsetWidth - p.offsetWidth
+				maxTop = box1.offsetHeight - p.offsetHeight
+			}
+			function out(){
+				big.style.display = 'none'
+				p.style.display = 'none'
+			}
+			function move(event){
+				//p元素移动的值
+				pLeft = event.clientX - p.offsetWidth/2
+				pTop = event.clientY - p.offsetHeight/2
+				//判断最小值
+				pLeft = pLeft <= 0 ? 0 : pLeft
+				pTop = pTop <= 0 ? 0 : pTop
+				//判断最大值
+				pLeft = pLeft >= maxLeft ? maxLeft : pLeft
+				pTop = pTop >= maxTop ? maxTop : pTop
+				
+				p.style.left = pLeft + 'px'
+				p.style.top = pTop + 'px'
+				//大图片的移动
+				big.style.left = -pLeft / maxLeft * 1500 + 'px'
+				big.style.top = -pTop / maxTop * 1500 + 'px'
+			}
+			box1.addEventListener('mouseover',over,false)
+			box1.addEventListener('mouseout',out,false)
+			box1.addEventListener('mousemove',move,false)
+		</script>
+	</body>
+</html>

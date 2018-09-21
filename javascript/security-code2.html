@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 30px;
+				text-align: center;
+				float: left;
+				line-height: 30px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+		</div>
+		<a href="#" id="btn">看不清，换一个</a>
+		<script>
+			var nums = new Array(0,1,2,3,4,5,6,7,8,9)
+			var upps = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')
+			var lows = new Array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z')
+			btn.onclick = function(){
+				code()
+			}
+			function code(){
+				var str = ''
+				for (i = 0;i < 6;i++) {
+					var a = Math.random()
+					if (a < 0.6) {
+						var num = parseInt(Math.random()*10)
+						str += nums[num]
+					}
+					else if(a >= 0.6 && a < 0.8){
+						var upp = parseInt(Math.random()*26)
+						str += upps[upp]
+					}
+					else if(a >= 0.8){
+						var low = parseInt(Math.random()*26)
+						str += lows[low]
+					}
+					var a = parseInt(Math.random()*256)
+					var b = parseInt(Math.random()*256)
+					var c = parseInt(Math.random()*256)
+					box.style.backgroundColor = 'rgb(' + a + ',' + b + ',' + c + ')'
+					box.style.color = 'rgb(' + c + ',' + a + ',' + b + ')';
+				}
+				box.innerText = str
+			}
+			code()
+		</script>
+	</body>
+</html>

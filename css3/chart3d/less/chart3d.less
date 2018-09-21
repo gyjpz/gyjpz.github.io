@@ -1,0 +1,162 @@
+.widhei(@wid:100%,@hei:100%){
+    width:@wid;
+    height:@hei;
+}
+.topleft{
+    top:0;
+    left: 0;
+}
+.bars(@time:0.5s,@ytime:0.3s,@content:'20000',@width:185px,@translateX:translateX(-200px),@height:200px,@translateZ:translateZ(200px)){
+    transition:@time all @ytime;
+    &::before{
+        height: 28px;
+        padding-right: 15px;
+        text-align: right;
+        display: block;
+        background: lightcyan;
+        position: absolute;
+        .topleft;
+        transform-origin:0 50% 0;
+        content: @content;
+        width: @width;
+        transform: rotateY(-90deg) @translateX;
+    }
+    &::after{
+        content: '';
+        width: 28px;
+        display: block;
+        background: lightblue;
+        position: absolute;
+        .topleft;
+        transform-origin:50% 0 0;
+        transform: rotateX(-90deg) translateZ(28px);
+        height: @height;
+    }
+    &.active{
+        transform: rotateZ(-60deg) @translateZ;
+    }
+}
+html,body{
+    .widhei;
+	margin: 0;
+	padding: 0;
+}
+.box{
+    .widhei;
+	overflow: hidden;
+	perspective: 1500px;
+	transform-style: preserve-3d;
+	position: relative;
+	background: linear-gradient(to left bottom, lightcoral , lightblue);
+    background: -webkit-linear-gradient(top right, lightcyan , lightblue);
+    .card{
+        .widhei(400px,550px);
+        margin:40px auto;
+        text-align: center;
+        border-radius: 10px;
+        border-top: 1px solid transparent;
+        z-index: 1;
+        transform-style: preserve-3d;
+        position: relative;
+        .photo{
+            .topleft;
+            right: 0;
+            bottom: 0;
+            display: block;
+            background:550px 550px url(../img/600x600.jpg) no-repeat;
+            background-position: -75px 0;
+            border-radius: 10px;
+            position: absolute;
+        }
+        h2{
+            margin-top: 150px;
+        }
+        h2,h3{
+            font-size: 32px;
+        }
+        .size{
+            font-size: 40px;
+        }
+        .none{
+            opacity: 0;
+        }
+        .chart{
+            .widhei(350px,50px);
+            padding: 11px 32px;
+            transform-style: preserve-3d;
+            .bar{
+                .widhei(28px,28px);
+                background: white;
+                float: left;
+                margin: 0 10px;
+                transform: rotateZ(-45deg);
+                display: inline-block;
+                transform-style: preserve-3d;
+                span{
+                    opacity: 0;
+                }
+                .opa{
+                    opacity: 1;
+                }
+            }
+            .bar1{
+                .bars;
+            }
+            .bar2{
+                .bars(@ytime:0.2s,@content:'10000',@width:85px,@translateX:translateX(-100px),@height:100px,@translateZ:translateZ(100px));
+            }
+            .bar3{
+                .bars(@ytime:0.1s,@content:'15000',@width:135px,@translateX:translateX(-150px),@height:150px,@translateZ:translateZ(150px))
+            }
+            .bar4{
+                .bars(@time:0.4s,@ytime:0.1s,@content:'24000',@width:225px,@translateX:translateX(-240px),@height:240px,@translateZ:translateZ(240px))
+            }
+            .bar5{
+                .bars(@ytime:0.1s,@content:'7000',@width:55px,@translateX:translateX(-70px),@height:70px,@translateZ:translateZ(70px))
+            }
+            .bar6{
+                .bars(@ytime:0.2s,@content:'7000',@width:55px,@translateX:translateX(-70px),@height:70px,@translateZ:translateZ(70px))
+            }
+            .bar7{
+                .bars(@content:'0000',@width:85px,@translateX:translateX(-100px),@height:100px,@translateZ:translateZ(100px))
+            }
+        }
+    }
+    .card2{
+        transform: rotateX(55deg) translateY(100px);
+    }
+    .card,.photo,.bar4,h2,p,h3,span{
+        transition: all 0.5s;
+    }
+    .chart,.bar,h2,p,h3{
+        position: relative;
+    }
+    .card::before{
+        content: "";
+        .widhei;
+        position: absolute;
+        display: block;
+        .topleft;
+        background: rgba(150, 150, 150, 0);
+        z-index:2;
+        transition: all 0.5s;
+        border-radius: 10px;
+    }
+    .card.cardbg::before{
+        background: rgba(0, 0, 0, 0.5);
+    }
+    .card::after{
+        content: "";
+        .widhei;
+        position: absolute;
+        display: block;
+        .topleft;
+        background: rgba(70, 70, 70, 1);
+        transition: all 0.5s;
+        transform: translateZ(-30px);
+        border-radius: 10px;
+    }
+    .card.cardshadow::after{
+        box-shadow: 0 30px 30px #555;
+    }
+}
