@@ -1,0 +1,44 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#box{
+	width: 500px;
+	height: 40px;
+	margin: auto;
+	margin-top: 100px;
+}
+#text{
+	width: 400px;
+	height: 36px;
+	border: 2px solid orange;
+	float: left;
+	line-height: 36px;
+	font-size: 16px;
+	outline: none;
+}
+#so{
+	width: 96px;
+	height: 40px;
+	color: white;
+	background-color: orange;
+	border: 0;
+	float: left;
+	font-size: 16px;
+}
+ul{
+	width: 400px;
+	border-top:0; 
+	float: left;
+}
+.result{
+	width: 400px;
+	height: 36px;
+	list-style: none;
+	line-height: 36px;
+	border-left: 2px solid orange;
+	border-right: 2px solid orange;
+}
+.result:last-child{
+	border-bottom: 2px solid orange;
+}

@@ -1,1 +1,0 @@
-# gyjpz.github.io
