@@ -1,0 +1,63 @@
+html,body,#ce,.row,#user{
+			height:100%;
+		} 
+		#ce{
+			padding-top: 50px;
+		}
+		#father{
+			background-color: #333;
+		}
+		#user{
+			border: 0;
+			margin: 0 -15px -20px -15px;
+			background-color: #333;
+		}
+		#user .glyphicon-user{
+			margin-right: 10px;
+		}
+		#user .glyphicon-menu-down,#user .glyphicon-menu-up{
+			margin-left: 40px;
+		}
+		#user a{
+			/* color: #777; */
+			border: 0;
+		}
+		#user .panel-heading a{
+			margin: -10px -15px;
+			background-color: #333;
+		}
+		#user .list-group a{
+			padding-left: 50px;
+		}
+		#user .list-group:last-child{
+			margin-bottom: 0px;
+		}
+
+		#adduser,#userlist{
+			/* margin: 0 -30px; */
+			width: 100%;
+		}
+		#adduser .glyphicon{
+			margin-right: 5px;
+		}
+		.panel{
+			/* width: 100%; */
+		}
+		th{
+			text-align: center;
+		}
+		::-webkit-scrollbar{
+		width:16px;
+		height:1px;
+		}
+		/* 设置滚动条条的样式*/
+		::-webkit-scrollbar-thumb{
+			border-radius: 10px;
+			-webkit-box-shadow: inset 0 0 5px rgba(255,255,255,0.5);
+			background: #535353;
+		}
+		::-webkit-scrollbar-track{
+			-webkit-box-shadow: inset 0 0 5px rgba(100,100,100,0.2);
+			border-radius: 10px;
+			background: #DDD;
+		}
