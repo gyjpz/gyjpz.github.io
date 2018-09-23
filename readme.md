@@ -26,16 +26,29 @@ svg动画:https://gyjpz.github.io/svg/svg-animate.html
 打地鼠：https://gyjpz.github.io/javascript/whack-a-mole/whack-a-mole.html
 放大镜：https://gyjpz.github.io/javascript/magnifying-glass/magnifying-glass1.html
        https://gyjpz.github.io/javascript/magnifying-glass/magnifying-glass2.html
+正则验证：https://gyjpz.github.io/javascript/taobao-card&regular-expression/regular-expression.html
+仿淘宝购物车：https://gyjpz.github.io/javascript/taobao-card&regular-expression/myCart.html
 ```
 ## jquery
 ```
+下拉菜单：https://gyjpz.github.io/jquery/drop-down-menu.html
+图片切换：https://gyjpz.github.io/jquery/picture-switching.html
+无缝轮播：https://gyjpz.github.io/jquery/broadcast/lunbo.html
+三级菜单：https://gyjpz.github.io/jquery/linkage/linkage.html
+放大镜插件：https://gyjpz.github.io/jquery/plug-in-unit/magnifier.html
+轮播图插件：https://gyjpz.github.io/jquery/plug-in-unit/broadcast.html
+拖动回收站：https://gyjpz.github.io/jquery/rubbish-basket/index.html
 
 ```
 ## ajax
 ```
-
+瀑布流：https://gyjpz.github.io/ajax/ajax.html
+       https://gyjpz.github.io/ajax/jqueryajax/jqueryajax.html
+仿淘宝搜索：https://gyjpz.github.io/ajax/taobao/index.html
+仿百度搜索!!!!!!!：https://gyjpz.github.io/ajax/baidu/ajax2.html
 ```
 ## bootstrap
 ```
-
+登录页：https://gyjpz.github.io/bootstrap/login/login.html
+主页：https://gyjpz.github.io/bootstrap/login/index.html
 ```
