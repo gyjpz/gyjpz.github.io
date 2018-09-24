@@ -7,6 +7,7 @@
 精灵按钮：https://gyjpz.github.io/css3/ghost-button1.html
          https://gyjpz.github.io/css3/ghost-button2.html
          https://gyjpz.github.io/css3/ghost-button3.html
+悬停变化：https://gyjpz.github.io/css3/hover-transform.html
 裁剪放大：https://gyjpz.github.io/css3/trim/zoomscale.html
 3D动画图：https://gyjpz.github.io/css3/animation3d.html
 3D统计图：https://gyjpz.github.io/css3/chart3d/chart3d.html
@@ -38,14 +39,14 @@ svg动画:https://gyjpz.github.io/svg/svg-animate.html
 放大镜插件：https://gyjpz.github.io/jquery/plug-in-unit/magnifier.html
 轮播图插件：https://gyjpz.github.io/jquery/plug-in-unit/broadcast.html
 拖动回收站：https://gyjpz.github.io/jquery/rubbish-basket/index.html
-
+桌面通知：https://gyjpz.github.io/jquery/desktop-notifications/new.html
 ```
 ## ajax
 ```
 瀑布流：https://gyjpz.github.io/ajax/ajax.html
        https://gyjpz.github.io/ajax/jqueryajax/jqueryajax.html
 仿淘宝搜索：https://gyjpz.github.io/ajax/taobao/index.html
-仿百度搜索!!!!!!!：https://gyjpz.github.io/ajax/baidu/ajax2.html
+仿百度搜索：https://gyjpz.github.io/ajax/baidu/ajax2.html
 ```
 ## bootstrap
 ```

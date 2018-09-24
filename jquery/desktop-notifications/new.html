@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow: hidden;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            border: transparent;
+            background-color: cadetblue;
+            color: aliceblue;
+            border-radius: 7px;
+        }
+        .box2{
+            display: none;
+        }
+        .box{
+            height: 600px;
+            width: 380px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .box>div{
+            width:280px;
+            height: 60px;
+            background: #555;
+            margin-bottom: 20px;
+            transition: transform 0.5s cubic-bezier(0.42, 0, 0.29, 1.32);
+            padding:20px 30px;
+            position: absolute;
+            bottom: 0;
+            transform: translateX(380px);
+        }
+        .box h4{
+            color: white;
+        }
+        .box img{
+            height: 60px;
+            width: 60px;
+            float: left;
+            margin-right: 15px;
+        }
+        .box span,.box p{
+            color:gainsboro;
+        }
+        .box div.active{
+            transform: translateX(0);
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <button>无图片通知</button>
+        <button>有图片通知</button>
+        <button>无图片通知2</button>
+        <button>有图片通知2</button>
+    </div>
+    <div class="box2">
+        <div>
+            <h4>新消息1</h4>
+            <span>新消息内容1</span>
+            <p>xxxxxxxxxxxxxxxxxxx</p>
+        </div>
+        <div>
+            <img src="1.jpg"/>
+            <h4>新消息2</h4>
+            <span>新消息内容2</span>
+            <p>xxxxxxxxxxxxxxxxxxx</p>
+        </div>
+        <div>
+            <h4>新消息3</h4>
+            <span>新消息内容3</span>
+            <p>xxxxxxxxxxxxxxxxxxx</p>
+        </div>
+        <div>
+            <img src="2.jpg"/>
+            <h4>新消息4</h4>
+            <span>新消息内容4</span>
+            <p>xxxxxxxxxxxxxxxxxxx</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="nopic"></div>
+        <div class="pic"></div>
+        <div class="nopic2"></div>
+        <div class="pic2"></div>
+    </div>
+    <script>
+        var a = 0,b = 0;
+        $('button').click(function(){
+            a %= 4;
+            var n = $(this).index();
+            var text = $('.box2>div').eq(n).html();
+            $('.box>div').eq(a).html(text).css({bottom:a*120 + 'px'}).toggleClass('active');
+
+            setTimeout(function(){
+                b %= 4;
+                console.log(b);
+                console.log($('.box>div').eq(b).hasClass('active'));
+                $('.box>div').eq(b).removeClass('active');
+                b++;
+            }, 3000);
+            a++;
+        })
+    </script>
+</body>
+</html>
