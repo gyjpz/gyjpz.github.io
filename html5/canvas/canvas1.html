@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.3.1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="600" style="border: 1px solid black;margin: auto;display: block;"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+
+        var data = [{x:150,y:350,r:2,start:0,end:2 * Math.PI},{x:250,y:330,r:2,start:0,end:2 * Math.PI},{x:350,y:220,r:2,start:0,end:2 * Math.PI},{x:450,y:210,r:2,start:0,end:2 * Math.PI},{x:550,y:140,r:2,start:0,end:2 * Math.PI},{x:650,y:160,r:2,start:0,end:2 * Math.PI}]
+        var line = function (fromX,fromY,toX,toY,color) {
+            ctx.beginPath();
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 1;
+            ctx.moveTo(fromX,fromY);
+            ctx.lineTo(toX,toY);
+            ctx.stroke();
+        }
+        function table() {
+            line(100, 100, 100, 500, 'black');
+            line(100, 500, 700, 500, 'black');
+            line(100, 100, 700, 100, 'gray');
+            line(100, 200, 700, 200, 'gray');
+            line(100, 300, 700, 300, 'gray');
+            line(100, 400, 700, 400, 'gray');
+            line(90, 100, 100, 100, 'black');
+            line(90, 200, 100, 200, 'black');
+            line(90, 300, 100, 300, 'black');
+            line(90, 400, 100, 400, 'black');
+            line(200, 500, 200, 510, 'black');
+            line(300, 500, 300, 510, 'black');
+            line(400, 500, 400, 510, 'black');
+            line(500, 500, 500, 510, 'black');
+            line(600, 500, 600, 510, 'black');
+        }
+        table();
+
+
+        var lines = function () {
+            ctx.beginPath();
+            ctx.strokeStyle = 'red';
+            ctx.lineWidth = 2;
+            ctx.moveTo(150,350);
+            ctx.lineTo(250,330);
+            ctx.lineTo(350,220);
+            ctx.lineTo(450,210);
+            ctx.lineTo(550,140);
+            ctx.lineTo(650,160);
+            ctx.stroke();
+        }
+        lines();
+
+        var Cir = function (x,y,r,start,end) {
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.start = start;
+            this.end = end;
+            this.draw = function() {
+                ctx.beginPath();
+                ctx.strokeStyle = 'red';
+                ctx.fillStyle = 'white';
+                ctx.lineWidth = 1;
+                ctx.arc(this.x, this.y, this.r, this.start, this.end * Math.PI, false);
+                ctx.stroke();
+                ctx.fill();
+            }
+            this.draw();
+        }
+        var lineArr = [];
+        function cirs() {
+            for(var j = 0;j < data.length;j++){
+                lineArr[j] = new Cir(data[j].x,data[j].y,data[j].r,data[j].start,data[j].end);
+            }
+        }
+        cirs();
+        canvas.onmousemove = function (e) {
+            ctx.clearRect(0,0,800,600)
+            lines();
+            table();
+            cirs();
+
+            var px = e.offsetX;
+            var py = e.offsetY;
+            var offset = 2;
+            var min = {x:0,y:0};
+            var max = {x:0,y:0};
+            for(var i = 0;i < data.length;i++){
+                min.x = lineArr[i].x-lineArr[i].r - offset;
+                min.y = lineArr[i].y-lineArr[i].r - offset;
+                max.x = lineArr[i].x+lineArr[i].r + offset;
+                max.y = lineArr[i].y+lineArr[i].r + offset;
+                if((px > min.x && px < max.x)&&(py > min.y && py < max.y)){
+                    new Cir(data[i].x,data[i].y,5,data[i].start,data[i].end);
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+
+</head>
+<body>
+    <canvas id="canvas" width="800" height="600" style="margin: auto;display: block;"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        function line(style,width,formX,fromY,toX,toY){
+            ctx.beginPath();
+            ctx.lineCap=style;
+            ctx.lineWidth=width;
+            ctx.moveTo(formX,fromY);
+            ctx.lineTo(toX,toY);
+            ctx.strokeStyle="#6ac335";
+            ctx.stroke();
+        }
+        line("round",32,300,250,300,350);
+        line("round",32,500,250,500,350);
+        line("round",32,370,350,370,450);
+        line("round",32,430,350,430,450);
+        line("round",32,336,383,464,383);
+        line("round",5,360,170,340,140);
+        line("round",5,440,170,460,140);
+        function cir(color,formX,fromY,toX,toY,angel,boo) {
+            ctx.beginPath();
+            ctx.lineWidth=1;
+            ctx.fillStyle = color;
+            ctx.arc(formX,fromY,toX,toY,angel,boo);
+            ctx.stroke();
+            ctx.fill();
+        }
+        cir("#6ac335",400,230,80,0,Math.PI,true);
+        cir("#ffffff",360,195,7,0,2*Math.PI,true);
+        cir("#ffffff",440,195,7,0,2*Math.PI,true);
+        function rect(formX,fromY,width,height) {
+            ctx.beginPath();
+            ctx.fillStyle = "#6ac335";
+            ctx.fillRect(formX,fromY,width,height);
+        }
+        rect(320,235,160,150);
+    </script>
+</body>
+</html>

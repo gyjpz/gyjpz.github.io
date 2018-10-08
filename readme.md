@@ -46,7 +46,7 @@
 [瀑布流](https://gyjpz.github.io/ajax/ajax.html)&nbsp;&nbsp;https://gyjpz.github.io/ajax/ajax.html<br/>
 [瀑布流2](https://gyjpz.github.io/ajax/jqueryajax/jqueryajax.html)&nbsp;&nbsp;https://gyjpz.github.io/ajax/jqueryajax/jqueryajax.html<br/>
 [仿淘宝搜索](https://gyjpz.github.io/ajax/taobao/index.html)&nbsp;&nbsp;https://gyjpz.github.io/ajax/taobao/index.html<br/>
-[仿百度搜索](https://gyjpz.github.io/ajax/baidu/ajax2.html)&nbsp;&nbsp;https://gyjpz.github.io/ajax/baidu/ajax2.html<br/>
+[百度词条](https://gyjpz.github.io/ajax/baidu/ajax2.html)&nbsp;&nbsp;https://gyjpz.github.io/ajax/baidu/ajax2.html<br/>
 
 ## bootstrap
 
