@@ -13,6 +13,12 @@
 [3D统计图](https://gyjpz.github.io/css3/chart3d/chart3d.html)&nbsp;&nbsp;https://gyjpz.github.io/css3/chart3d/chart3d.html<br/>
 [侧边栏转换](https://gyjpz.github.io/css3/leftbar/leftnav.html)&nbsp;&nbsp;https://gyjpz.github.io/css3/leftbar/leftnav.html<br/>
 
+## html5
+
+[拖拽保存列表顺序](https://gyjpz.github.io/html5/drop/drag-drop%26localstorage.html)&nbsp;&nbsp;https://gyjpz.github.io/html5/drop/drag-drop%26localstorage.html
+[安卓机器人](https://gyjpz.github.io/html5/canvas/canvas-androidrobot.html)&nbsp;&nbsp;https://gyjpz.github.io/html5/canvas/canvas-androidrobot.html
+[折线统计图](https://gyjpz.github.io/html5/canvas/canvas1.html)&nbsp;&nbsp;https://gyjpz.github.io/html5/canvas/canvas1.html
+
 ## svg
 
 [svg动画](https://gyjpz.github.io/svg/svg-animate.html)&nbsp;&nbsp;https://gyjpz.github.io/svg/svg-animate.html<br/>
@@ -20,13 +26,14 @@
 ## javascript
 
 [小球跳动](https://gyjpz.github.io/javascript/ball-jump.html)&nbsp;&nbsp;https://gyjpz.github.io/javascript/ball-jump.html<br/>
-[万年历](https://gyjpz.github.io/javascript/perpetual-calendar.html)&nbsp;&nbsp;https://gyjpz.github.io/javascript/perpetual-calendar.html<br/>
 [验证码](https://gyjpz.github.io/javascript/security-code2.html)&nbsp;&nbsp;https://gyjpz.github.io/javascript/security-code2.html<br/>
 [小球原路返回](https://gyjpz.github.io/javascript/return-back.html)&nbsp;&nbsp;https://gyjpz.github.io/javascript/return-back.html<br/>
 [购物车全选](https://gyjpz.github.io/javascript/checkall/check-all.html)&nbsp;&nbsp;https://gyjpz.github.io/javascript/checkall/check-all.html<br/>
+[万年历](https://gyjpz.github.io/javascript/perpetual-calendar.html)&nbsp;&nbsp;https://gyjpz.github.io/javascript/perpetual-calendar.html<br/>
 [打地鼠](https://gyjpz.github.io/javascript/whack-a-mole/whack-a-mole.html)&nbsp;&nbsp;https://gyjpz.github.io/javascript/whack-a-mole/whack-a-mole.html<br/>
 [放大镜](https://gyjpz.github.io/javascript/magnifying-glass/magnifying-glass1.html)&nbsp;&nbsp;https://gyjpz.github.io/javascript/magnifying-glass/magnifying-glass1.html<br/>
 [放大镜2](https://gyjpz.github.io/javascript/magnifying-glass/magnifying-glass2.html)&nbsp;&nbsp;https://gyjpz.github.io/javascript/magnifying-glass/magnifying-glass2.html<br/>
+[cookie保存背景](https://gyjpz.github.io/javascript/cookie/cookie.html)&nbsp;&nbsp;https://gyjpz.github.io/javascript/cookie/cookie.html
 [正则验证](https://gyjpz.github.io/javascript/taobao-card&regular-expression/regular-expression.html)&nbsp;&nbsp;https://gyjpz.github.io/javascript/taobao-card&regular-expression/regular-expression.html<br/>
 [仿淘宝购物车](https://gyjpz.github.io/javascript/taobao-card&regular-expression/myCart.html)&nbsp;&nbsp;https://gyjpz.github.io/javascript/taobao-card&regular-expression/myCart.html<br/>
 
