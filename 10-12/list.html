@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        table,table tr th, table tr td {
+            border:1px solid black;
+        }
+        table {
+            width: 500px;
+            text-align: center;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <table  cellpadding="10px">
+        <caption>员工信息</caption>
+        <thead>
+            <tr>
+                <td></td>
+                <td>姓名</td>
+                <td>薪水</td>
+                <td>年龄</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>张三</td>
+                <td>20000</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>李四</td>
+                <td>22000</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>王五</td>
+                <td>14000</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>赵六</td>
+                <td>15000</td>
+                <td>21</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        $('thead').css('backgroundColor','lightgray');
+        $('tbody tr:even').css('backgroundColor','lightcyan');
+        $('tbody tr:odd').css('backgroundColor','lightblue');
+        $('tbody input').change(function () {
+            $('tbody tr:even').css('backgroundColor','lightcyan');
+            $('tbody tr:odd').css('backgroundColor','lightblue');
+            $('tbody input:checked').parents('tr').css('backgroundColor','yellow')
+        })
+    </script>
+</body>
+</html>

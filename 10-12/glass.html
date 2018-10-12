@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			border: 1px solid black;
+			float: left;
+			position: relative;
+		}
+		#smalldiv{
+			width: 245px;
+		}
+		#smallimg{
+			width: 245px;
+			vertical-align: bottom;
+		}
+		#bigdiv{
+			width: 315px;
+			height: 315px;
+			overflow: hidden;
+			display: none;
+		}
+		#bigimg{
+			width: 1102px;
+			position: absolute;
+		}
+		p{
+			width: 70px;
+			height: 70px;
+			background-color: rgba(255,255,0,0.4);
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="smalldiv">
+		<img src="img/small.jpg" id="smallimg">
+		<p></p>
+	</div>
+	<div id="bigdiv">
+		<img src="img/big.jpg" id="bigimg">
+	</div>
+	<script type="text/javascript">
+		var max = {x:0,y:0},pos = {x:0,y:0},big = {x:0,y:0};
+		$('#smalldiv').hover(function(){
+			$('p,#bigdiv').css('display','block');
+		},function(){
+			$('p,#bigdiv').css('display','none');
+		}).mousemove(function(event) {
+			max.x = $('#smallimg').width() - $('p').width();
+			max.y = $('#smallimg').height() - $('p').height();
+
+			pos.x = event.pageX - $('p').width()/2;
+			pos.y = event.pageY - $('p').height()/2;
+			
+			pos.x = pos.x < 0 ? 0 : pos.x;
+			pos.y = pos.y < 0 ? 0 : pos.y;
+
+			pos.x = pos.x > max.x ? max.x : pos.x;
+			pos.y = pos.y > max.y ? max.y : pos.y;
+
+			big.x = (-pos.x/max.x) * ($('#bigimg').width() - $('#bigdiv').width());
+			big.y = (-pos.y/max.y) * ($('#bigimg').height() - $('#bigdiv').height());
+
+			$('p').css({
+				left: pos.x,
+				top: pos.y
+			});
+			$('#bigimg').css({
+				left:big.x,
+				top:big.y
+			});
+		});
+	</script>
+</body>
+</html>
