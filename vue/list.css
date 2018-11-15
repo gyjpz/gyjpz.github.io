@@ -247,6 +247,10 @@ body{
     color: #555;
 }
 
+.list .other-phone{
+    margin-top: -20px;
+}
+
 /* model */
 .model {
     position: fixed;
