@@ -17,7 +17,6 @@ html,body,#main,.item,.aft{
     transition: all 0.5s;
     position: relative;
     text-align: center;
-    background-repeat: no-repeat;
 }
 .aft{
     width: 100%;
@@ -29,18 +28,23 @@ html,body,#main,.item,.aft{
 }
 .item1{
     background-image: url("../img/img_terrain1.jpg");
+    background-repeat: no-repeat;
 }
 .item2{
     background-image: url("../img/img_terrain2.jpg");
+    background-repeat: no-repeat;
 }
 .item3{
     background-image: url("../img/img_terrain3.jpg");
+    background-repeat: no-repeat;
 }
 .item4{
     background-image: url("../img/img_terrain4.jpg");
+    background-repeat: no-repeat;
 }
 .item5{
     background-image: url("../img/img_terrain5.jpg");
+    background-repeat: no-repeat;
     transform-origin: 100% 0 0;
 }
 .item p{
