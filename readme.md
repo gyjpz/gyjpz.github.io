@@ -1,6 +1,6 @@
 # 作业目录
 
-[主页](https://gyjpz.github.io/mvIndex/index.html)
+[主页](https://gyjpz.github.io/myIndex/index.html)
 
 ## css3
 
