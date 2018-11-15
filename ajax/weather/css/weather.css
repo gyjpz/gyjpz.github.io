@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#contain{
+    width: 100%;
+    background:linear-gradient(to left top,lightcyan, royalblue);
+}
+#main{
+    width: 1000px;
+    height: 100%;
+    margin: auto;
+}
+#today{
+    height: 400px;
+    padding: 20px 50px;
+    margin-bottom: 15px;
+    position: relative;
+    background-color: rgba(255,255,255,0.3);
+}
+#today>h1{
+    font-weight: normal;
+    color: white;
+    line-height: 50px;
+}
+#today>h1:hover{
+    cursor: pointer;
+}
+#today .cityName{
+    background-color: white;
+    color: lightblue;
+    line-height: 40px;
+    padding: 0 15px;
+    border-radius: 10px;
+    position: absolute;
+}
+#today .cityName>#city{
+    width: 90px;
+    height: 25px;
+}
+#today .cityName>button{
+    height: 27px;
+    line-height: 27px;
+    width: 50px;
+    background-color: lightblue;
+    color: white;
+    border: transparent;
+}
+.active{
+    display: none;
+}
+#today>p{
+    font-size: 17px;
+    color: white;
+}
+#today>img{
+    width: 128px;
+    display: block;
+    margin:-40px auto 0;
+}
+#today>h2{
+    font-weight: normal;
+    font-size: 100px;
+    width: 218px;
+    color: white;
+    margin: auto;
+    display: block;
+}
+#today>#today_weather{
+    width: 400px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.4);
+    margin:20px auto;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.5s;
+}
+#today>#today_weather:hover{
+    background-color: rgba(0,0,0,0.6);
+}
+#today>#today_weather>p{
+    line-height: 40px;
+    color: white;
+}
+#today>#today_air{
+    width: 220px;
+    padding: 10px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    position: absolute;
+    top: 150px;
+    right: 50px;
+    color: white;
+}
+#today>#today_air p{
+    margin: 5px 0;
+}
+#today>#today_air span{
+    width: 70px;
+    display: block;
+    float: right;
+    background-color: greenyellow;
+    text-align: center;
+}
+#week{
+    height: 240px;
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px 0;
+    margin-bottom: 15px;
+}
+#week h3{
+    color: skyblue;
+    margin-left: 20px;
+}
+#week>.oneday{
+    width: 14.28%;
+    height:200px;
+    float: left;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    border-right: 1px dashed grey;
+    text-align: center;
+    margin-top: 15px;
+    color: white;
+    transition:all 0.5s;
+}
+#week>.oneday:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+#week>.oneday:last-of-type{
+    border-right: 0;
+}
+#week>.oneday img {
+    width: 40px;
+    margin: 15px 0;
+}
+#week>.oneday h4{
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+#lifeIndex{
+    height: 200px;
+    background-color: rgba(0,0,0,0.7);
+    margin-bottom: 15px;
+}
+#lifeIndex>.index{
+    padding: 15px;
+    width: 33.3%;
+    height: 50%;
+    float: left;
+    box-sizing: border-box;
+    color: white;
+    transition: all 0.5s;
+}
+#lifeIndex>.index:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+#lifeIndex>.index:nth-of-type(1){
+    border-bottom: 1px dashed grey;
+    border-right: 1px dashed grey;
+}
+#lifeIndex>.index:nth-of-type(2){
+    border-bottom: 1px dashed grey;
+}
+#lifeIndex>.index:nth-of-type(3){
+    border-bottom: 1px dashed grey;
+    border-left: 1px dashed grey;
+}
+#lifeIndex>.index:nth-of-type(4){
+    border-right: 1px dashed grey;
+}
+#lifeIndex>.index:nth-of-type(6){
+    border-left: 1px dashed grey;
+}
+#lifeIndex .indexBox{
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    float: left;
+}
+#lifeIndex img{
+    width: 40px;
+}
+#lifeIndex h3{
+    font-weight: normal;
+    color: lightblue;
+    margin-bottom: 10px;
+}
+#lifeIndex p{
+    font-size: 14px;
+}

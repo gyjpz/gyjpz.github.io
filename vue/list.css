@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: rgb(245, 245, 245);
+}
+
+#app {
+    width: 540px;
+    margin: auto;
+    position: relative;
+}
+
+/* app-header */
+#app-header {
+    width: 100%;
+}
+
+#app-search {
+    width: 100%;
+    vertical-align: middle;
+    background: white;
+    overflow: hidden;
+}
+
+#back {
+    width: 44px;
+    height: 44px;
+    float: left;
+    background: url(./img/uniE005.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 16px 14px;
+}
+
+#search {
+    width: 452px;
+    height: 44px;
+    text-align: center;
+    float: left;
+}
+
+#search input {
+    width: 432px;
+    height: 30px;
+    margin-top: 7px;
+    border: transparent;
+    outline: none;
+    padding-left: 20px;
+    border-radius: 15px;
+    background-color: rgb(245, 245, 245);
+}
+
+#other {
+    width: 44px;
+    height: 44px;
+    background: url(./img/more.png) no-repeat;
+    background-size: 20px 20px;
+    background-position: 14px 20px;
+    float: left;
+}
+
+/* classification-search */
+#classification-search{
+    width: 100%;
+    height: 65px;
+    margin: 10px 0;
+    background-color: rgb(230, 230, 235);
+    position: relative;
+}
+
+.classification-img{
+    width: 65px;
+    height: 65px;
+    background-size: 65px 65px;
+    margin-left: 10.6px;
+    float: left;
+    position: relative;
+}
+
+.classification-title{
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    text-align: center;
+    line-height: 65px;
+    font-size: 12px;
+}
+
+/* sort-screen */
+#sort-classify{
+    width: 100%;
+    height: 85px;
+    background-color: white;
+    font-size: 14px;
+}
+
+#sort{
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgb(230, 230, 230);
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.sorting{
+    width: 154px;
+    text-align: center;
+    height: 20px;
+    margin-top: 10px;
+    float: left;
+}
+
+.screen{
+    width: 78px;
+    text-align: center;
+    height: 20px;
+    margin-top: 10px;
+    float: left;
+    box-sizing: border-box;
+    border-left: 1px solid rgb(230, 230, 230);
+}
+
+#classify{
+    width: 100%;
+    height: 45px;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: #555;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.dbl11{
+    background-image: url(//img11.360buyimg.com/jdphoto/s90x28_jfs/t24823/217/2109137440/346/25a8b664/5bc45b70N0e029d12.png);
+    background-size: 50px 15px;
+    background-repeat: no-repeat;
+    background-position: 35px 5px;
+}
+
+.classify span{
+    width: 120px;
+    height: 25px;
+    line-height: 25px;
+    background-color: rgb(240, 240, 245);
+    float: left;
+    margin: 10px 5px;
+    text-align: center;
+}
+
+.classify:first-child{
+    margin-left: 10px;
+}
+
+/* app-list */
+#app-list {
+    width: 100%;
+}
+
+.commodity {
+    width: 268px;
+    float: left;
+}
+
+.commodity.list {
+    width: 100%;
+}
+
+#app-list .commodity:nth-child(odd){
+    margin-right: 4px;
+}
+
+.commodity-img {
+    width: 100%;
+    background-color: white;
+    padding-top:2px;
+    vertical-align: bottom;
+}
+
+.list .commodity-img {
+    width: 120px;
+    vertical-align: bottom;
+}
+
+.commodity-content {
+    width: 250px;
+    height: 135px;
+    padding: 10px 9px 0;
+    margin-bottom: 4px;
+    background-color: white;
+}
+
+.list .commodity-content {
+    width: 402px;
+    height: 112px;
+    float: right;
+    margin-bottom: 0px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    background-color: white;
+}
+
+.commodity-title {
+    width: 100%;
+    line-height: 20px;
+    height: 40px;
+    font-weight: 400;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.commodity-title img {
+    height: 13px;
+    margin: 0 7px -2px 0;
+}
+
+.commodity-property {
+    font-size: 12px;
+    color: #999;
+    background-color: #eee;
+    border-radius: 3px;
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+.commodity-price {
+    width: 100%;
+    margin-top: 8px;
+    color: red;
+    font-size: 16px;
+}
+
+.commodity-comment{
+    color: #999;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.other-phone{
+    float: right;
+    font-size: 12px;
+    color: #555;
+}
+
+/* model */
+.model {
+    position: fixed;
+    right: 10px;
+    bottom: 50px;
+}
+
+.model button, .top button{
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    outline: none;
+    background-repeat:  no-repeat;
+    background-size: 15px 15px;
+    background-color: white;
+    background-position: 8px 8px;
+}
+
+#btn1{
+    background-image: url(./img/list1.png);
+}
+
+#btn2{
+    background-image: url(./img/list2.png);
+}
+
+.top{
+    position: fixed;
+    right: 10px;
+    bottom: 100px;
+}
+
+.top button{
+    background-image: url(./img/top.png);
+    background-position: 8px 8px;
+    background-size: 17px 17px;
+}

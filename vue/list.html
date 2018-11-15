@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手机</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="list.css">
+    <!-- <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script> -->
+</head>
+
+<body >
+    <div id="app">
+
+        <header id="app-header">
+
+            <div id="app-search">
+                <div id="back"></div>
+                <div id="search">
+                    <input type="text">
+                </div>
+                <div id="other"></div>
+            </div>
+
+            <div id="classification-search">
+                <div class="classification-img" v-for="item in classificationData" :key="item.id" :style=`background-image:url(${item.img})`>
+                    <div class="classification-title">{{item.title}}</div>
+                </div>
+            </div>
+            
+            <div id="sort-classify">
+                <div id="sort">
+                    <div class="sorting"><a>综合</a></div>
+                    <div class="sorting"><a>销量</a></div>
+                    <div class="sorting"><a>服务</a></div>
+                    <div class="screen"><a>筛选</a></div>
+                </div>
+                <div id="classify">
+                    <div class="classify"><span class="dbl11"></span></div>
+                    <div class="classify"><span>新品</span></div>
+                    <div class="classify"><span>品牌</span></div>
+                    <div class="classify"><span>机身内存</span></div>
+                </div>
+            </div>
+
+        </header>
+
+        <div id="app-list">
+            <app-lists class="commodity" :class="model" v-for="item in commodityData" :key="item.id" :lists="item" :img-double11="imgDouble11">
+            </app-lists>
+        </div>
+
+        <div class="model">
+            <button @click="model='grid'" v-if="model==='list'" id="btn1"></button>
+            <button @click="model='list'" v-else id="btn2"></button>
+        </div>
+
+        <div class="top" v-if="istop">
+            <button @click="toTop"></button>
+        </div>
+    </div>
+
+    <script>
+        Vue.component('app-lists', {
+            props: ['lists', 'img-double11'],
+            template: 
+            `
+                <div>
+                    <img class=commodity-img :src="imgSrc(lists.Content.imageurl)" />
+                    <div class=commodity-content>
+                        <h5 class=commodity-title>
+                            <img :src="imgDouble11"/>{{lists.Content.warename}}
+                        </h5>
+                        <span class=commodity-property v-for="pro in propertyList(lists.Content.CustomAttrList)">{{pro}}</span>
+                        <p class=commodity-price>￥{{lists.dredisprice}}</p>
+                        <p class=commodity-comment v-text='commentcountNum(lists.commentcount)'></p>
+                        <p class=other-phone>查看同款二手></p>
+                    </div>
+                </div>
+            `,
+            methods: {
+                propertyList: function (property) {
+                    return property.split("^")
+                },
+                imgSrc:function (param) {
+                    return `http://img12.360buyimg.com/mobilecms/s270x270_${param}`
+                },
+                commentcountNum:function(num){
+                    return `${parseInt(num/10000)}万+条评论`
+                }
+            }
+        })
+
+        Vue.component('classification-search', {
+            props:[],
+            template:''
+        })
+
+        var json = [
+            {
+                img:'//img10.360buyimg.com/n3/jfs/t22069/146/1007377881/31221/1af007b1/5b1de3d3Na2363490.jpg',
+                title:'游戏手机'
+            },
+            {
+                img:'//img11.360buyimg.com/n3/jfs/t20413/323/981711718/35956/4c4b9f50/5b1de42bNd47d842b.jpg',
+                title:'拍照手机'
+            },
+            {
+                img:'//img12.360buyimg.com/n3/jfs/t20806/22/685508537/20054/7170ed02/5b14b93fN96c00041.jpg',
+                title:'女性手机'
+            },
+            {
+                img:'////img13.360buyimg.com/n3/jfs/t22132/24/996074070/4159/7684d4d8/5b1de363Nfbc0572e.jpg',
+                title:'长续航手机'
+            },
+            {
+                img:'////img14.360buyimg.com/n3/jfs/t18898/90/33801589/19547/e353d9a5/5a58a3b7N33fd7656.jpg',
+                title:'老人机'
+            },
+            {
+                img:'//img10.360buyimg.com/n3/jfs/t18787/52/1724315138/39302/cc5c5ec1/5ad6e401N76b7c866.jpg',
+                title:'户外手机'
+            },
+            {
+                img:'//img11.360buyimg.com/n3/jfs/t24847/54/1172393846/11487/e6b210be/5b8cb159Nad5f45be.jpg',
+                title:'移动volet'
+            }
+        ]
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                commodityData: [],
+                classificationData:json,
+                model: 'grid',
+                imgDouble11: '//img11.360buyimg.com/jdphoto/s68x28_jfs/t24730/322/2165679440/954/fe3afa05/5bc45b9aNb1315ac0.png',
+                istop: false
+            },
+            methods:{
+                handleScroll:function(){
+                    if(window.scrollY >= 600){
+                        this.istop = true
+                    }else{
+                        this.istop = false
+                    }
+                },
+                toTop:function(){
+                    document.documentElement.scrollTop = document.body.scrollTop = 0;
+                }
+            },
+            created: function () {
+                axios.get('./test.json').then((response) => {
+                    console.log(response.data.data.searchm.Paragraph);
+                    this.commodityData = response.data.data.searchm.Paragraph;
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            },
+            mounted: function () {
+                window.addEventListener('scroll',this.handleScroll);
+            }
+        })
+
+    </script>
+</body>
+
+</html>

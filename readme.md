@@ -54,8 +54,12 @@
 [瀑布流2](https://gyjpz.github.io/ajax/jqueryajax/jqueryajax.html)&nbsp;&nbsp;https://gyjpz.github.io/ajax/jqueryajax/jqueryajax.html<br/>
 [仿淘宝搜索](https://gyjpz.github.io/ajax/taobao/index.html)&nbsp;&nbsp;https://gyjpz.github.io/ajax/taobao/index.html<br/>
 [百度词条](https://gyjpz.github.io/ajax/baidu/ajax2.html)&nbsp;&nbsp;https://gyjpz.github.io/ajax/baidu/ajax2.html<br/>
+[天气预报](https://gyjpz.github.io/ajax/weather/weather.html)&nbsp;&nbsp;https://gyjpz.github.io/ajax/weather/weather.html<br/>
 
 ## bootstrap
 
 [登录页](https://gyjpz.github.io/bootstrap/login/login.html)&nbsp;&nbsp;https://gyjpz.github.io/bootstrap/login/login.html<br/>
 [主页](https://gyjpz.github.io/bootstrap/login/index.html)&nbsp;&nbsp;https://gyjpz.github.io/bootstrap/login/index.html<br/>
+
+## vue
+[京东购物车](https://gyjpz.github.io/vue/list.html)&nbsp;&nbsp;https://gyjpz.github.io/vue/list.html<br/>
