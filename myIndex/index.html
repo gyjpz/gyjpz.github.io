@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div class="item item1"><div class="aft">
+            <p>css3</p>
+            <a href="https://gyjpz.github.io/css3/hover-transform.html">悬停变化</a>
+            <a href="https://gyjpz.github.io/css3/chart3d/chart3d.html">3D统计图</a>
+            <a href="https://gyjpz.github.io/css3/leftbar/leftnav.html">侧边栏转换</a>
+            <a href="https://gyjpz.github.io/css3/trim/zoomscale.html">裁剪放大</a>
+            <p>html5</p>
+            <a href="https://gyjpz.github.io/html5/canvas/canvas1.html">折线统计图</a>
+        </div></div>
+        <div class="item item2"><div class="aft">
+            <p>javascript</p>
+            <a href="https://gyjpz.github.io/javascript/security-code2.html">验证码</a>
+            <a href="https://gyjpz.github.io/javascript/taobao-card&regular-expression/myCart.html">仿淘宝购物车</a>
+            <a href="https://gyjpz.github.io/javascript/taobao-card&regular-expression/regular-expression.html">正则验证</a>
+            <p>jquery</p>
+            <a href="https://gyjpz.github.io/jquery/desktop-notifications/new.html">桌面通知</a>
+            <a href="https://gyjpz.github.io/jquery/rubbish-basket/index.html">拖动回收站</a>
+        </div></div>
+        <div class="item item3"><div class="aft">
+            <p>svg</p>
+            <a href="https://gyjpz.github.io/svg/svg-animate.html">svg动画</a>
+            <p>ajax</p>
+            <a href="https://gyjpz.github.io/ajax/jqueryajax/jqueryajax.html">瀑布流</a>
+            <a href="https://gyjpz.github.io/ajax/baidu/ajax2.html">百度词条</a>
+            <a href="https://gyjpz.github.io/ajax/weather/weather.html">天气预报</a>
+        </div></div>
+        <div class="item item4"><div class="aft">
+            <p>bootstrap</p>
+            <a href="https://gyjpz.github.io/bootstrap/login/login.html">登录页</a>
+            <a href="https://gyjpz.github.io/bootstrap/login/index.html">主页</a>
+        </div></div>
+        <div class="item item5"><div class="aft">
+            <p>vue</p>
+            <a href="https://gyjpz.github.io/vue/list.html">京东购物车</a>
+        </div></div>
+    </div>
+</body>
+<script>
+    $('#main .item').hover(function(){
+        $(this).css({width:'40%'}).siblings('.item').css({width:'15%'});
+        $(this).find('.aft').css({backgroundColor:'rgba(0, 0, 0, 0.1)'});
+    },function(){
+        $('#main .aft').css({backgroundColor:'rgba(0, 0, 0, 0.5)'});
+        $('#main .item').css({width:'20%'})
+    })
+</script>
+</html>

@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body,#main,.item,.aft{
+    height: 100%;
+}
+#main{
+    width: 100%;
+}
+.item{
+    width: 20%;
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    float: left;
+    overflow: hidden;
+    transition: all 0.5s;
+    position: relative;
+    text-align: center;
+}
+.aft{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top:0;
+    left: 0;
+    transition: 1s all 0.3s;
+}
+.item1{
+    background-image: url("../img/img_terrain1.jpg");
+}
+.item2{
+    background-image: url("../img/img_terrain2.jpg");
+}
+.item3{
+    background-image: url("../img/img_terrain3.jpg");
+}
+.item4{
+    background-image: url("../img/img_terrain4.jpg");
+}
+.item5{
+    background-image: url("../img/img_terrain5.jpg");
+    transform-origin: 100% 0 0;
+}
+.item p{
+    color: white;
+    font-size: 40px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+.item a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    line-height: 50px;
+}
